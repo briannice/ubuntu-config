@@ -1,28 +1,57 @@
+# -------------------------------------
+# Colors
+# -------------------------------------
+dark="235"
+light="255"
+green="40"
+red="196"
+orange="202"
+purple="99"
+blue="21"
+cyan="45"
+pink="207"
+yellow="221"
+
+# -------------------------------------
+# Clock
+# -------------------------------------
 function clock() {
-    local color="%F{202}"
+    local color="%F{$orange}"
     echo "${color} %T"
 }
 
+# -------------------------------------
+# Username
+# -------------------------------------
 function user() {
-    local color="%F{99}"
+    local color="%F{$purple}"
     local user="%n"
     echo "${color} ${user}"
 }
 
+# -------------------------------------
+# Computer hostname
+# -------------------------------------
 function host() {
-    local color="%F{045}"
+    local color="%F{$orange}"
     local host="%m"
     echo "  ${color} ${host}"
 }
 
+# -------------------------------------
+# Directory
+# -------------------------------------
 function dir() {
-    local color="%F{221}"
+    local color="%F{$yellow}"
     local dir=" %4~"
     echo "  $color$dir"
 }
 
+# -------------------------------------
+# Version control
+# -------------------------------------
 function vcs() {
-    local color="%F{207}"
+    local color="%F{$pink}"
     ZSH_THEME_GIT_PROMPT_PREFIX="${color} "
     ZSH_THEME_GIT_PROMPT_SUFFIX=""
     ZSH_THEME_GIT_PROMPT_DIRTY=" "
@@ -33,8 +62,11 @@ function vcs() {
     fi
 }
 
+# -------------------------------------
+# Python virtual environment
+# -------------------------------------
 function pyenv() {
-    local color="%F{39}"
+    local color="%F{$blue}"
     ZSH_THEME_VIRTUALENV_PREFIX="${color} "
     ZSH_THEME_VIRTUALENV_SUFFIX=""
 
@@ -43,12 +75,18 @@ function pyenv() {
     fi
 }
 
+# -------------------------------------
+# Exit status code
+# -------------------------------------
 function status() {
-    local green="%F{40}"
-    local red="%F{196}"
+    local green="%F{$green}"
+    local red="%F{$red}"
     echo "%(?.$green.$red)%?   %{$reset_color%}"
 }
 
+# -------------------------------------
+# Prompt
+# -------------------------------------
 PROMPT=$'
- $(user)$(host)$(dir)$(vcs)$(pyenv)
- $(status)'
+$(user)$(host)$(dir)$(vcs)$(pyenv)
+$(status)'
