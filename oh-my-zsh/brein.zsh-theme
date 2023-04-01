@@ -6,7 +6,7 @@ function clock() {
 function user() {
     local color="%F{99}"
     local user="%n"
-    echo "  ${color} ${user}"
+    echo "${color} ${user}"
 }
 
 function host() {
@@ -41,7 +41,6 @@ function pyenv() {
     if [ -n "$(virtualenv_prompt_info)" ]; then
         echo "  $(virtualenv_prompt_info)"
     fi
-
 }
 
 function status() {
@@ -51,5 +50,5 @@ function status() {
 }
 
 PROMPT=$'
- $(clock)$(user)$(host)$(dir)$(vcs)$(pyenv)
+ $(user)$(host)$(dir)$(vcs)$(pyenv)
  $(status)'
