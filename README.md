@@ -16,3 +16,7 @@ Configuration files for my Ubuntu setup!
 | Cyan   | 45    | #00d7ff |
 | Pink   | 207   | #ff5fff |
 | Yellow | 221   | #ffd75f |
+
+## Fonts
+
+[CascadiaCode Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/CascadiaCode.zip)
